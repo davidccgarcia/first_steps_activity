@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Note;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,5 +18,18 @@ Route::get('/', function () {
 });
 
 Route::get('notes', function () {
-    return view('notes.index');
+    $notes = Note::all();
+    return view('notes.index', compact('notes'));
 });
+
+Route::get('notes/create', function () {
+    return "[create notes]";
+});
+
+Route::get('notes/{note}', function ($note) {
+    dd($note);
+})->where('note', '[0-9]+');
+
+Route::get('optional/{note}/{slug?}', function ($note, $slug = null) {
+    dd($slug);
+})->where('note', '[0-9]+');
