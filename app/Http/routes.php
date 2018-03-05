@@ -23,7 +23,11 @@ Route::get('notes', function () {
 });
 
 Route::get('notes/create', function () {
-    return "[create notes]";
+    return '[create notes]';
+});
+
+Route::post('notes', function () {
+    return '[Creating a note]';
 });
 
 Route::get('notes/{note}', function ($note) {
