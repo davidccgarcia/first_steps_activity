@@ -1,7 +1,5 @@
 <?php
 
-
-use App\Note;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,14 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('notes', function () {
-    $notes = Note::all();
-    return view('notes.index', compact('notes'));
-});
+Route::get('notes', 'NotesController@index');
 
-Route::get('notes/create', function () {
-    return '[create notes]';
-});
+Route::get('notes/create', 'NotesController@create');
 
 Route::post('notes', function () {
     return '[Creating a note]';
