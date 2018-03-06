@@ -8,7 +8,10 @@
 
     <ul class="list-group">
         @foreach($notes as $note)
-        <li class="list-group-item">{{ $note->note }}</li>
+        <li class="list-group-item">
+            <span class="label label-info">{{ $note->category->name }}</span> 
+            {{ $note->note }}
+        </li>
         @endforeach
     </ul>
     {!! $notes->render() !!}

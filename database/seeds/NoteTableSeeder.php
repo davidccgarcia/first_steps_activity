@@ -11,6 +11,11 @@ class NoteTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Note::class)->times(50)->create();
+        $categories = App\Category::all();
+        $notes = factory(App\Note::class)->times(100)->make();
+
+        foreach ($notes as $note) {
+            $categories->random()->notes()->save($note);
+        }
     }
 }
