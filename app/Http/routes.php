@@ -21,10 +21,4 @@ Route::get('notes/create', 'NotesController@create');
 
 Route::post('notes', 'NotesController@store');
 
-Route::get('notes/{note}', function ($note) {
-    dd($note);
-})->where('note', '[0-9]+');
-
-Route::get('optional/{note}/{slug?}', function ($note, $slug = null) {
-    dd($slug);
-})->where('note', '[0-9]+');
+Route::get('notes/details/{note}', 'NotesController@show')->where('note', '[0-9]+');

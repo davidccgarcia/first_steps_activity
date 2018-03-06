@@ -16,8 +16,8 @@ class NotesTest extends TestCase
     public function test_notes_list()
     {
         // Having 
-        $note1 = Note::create(['note' => 'My first note']);
-        $note2 = Note::create(['note' => 'Second note']);
+        $note1 = Note::create(['note' => 'My first note', 'category_id' => 1]);
+        $note2 = Note::create(['note' => 'Second note', 'category_id' => 2]);
 
         // When
         $this->visit('notes');
