@@ -11,4 +11,5 @@
         <li class="list-group-item">{{ $note->note }}</li>
         @endforeach
     </ul>
+    {!! $notes->render() !!}
 @endsection
