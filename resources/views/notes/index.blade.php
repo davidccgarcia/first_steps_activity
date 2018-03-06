@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Notes</title>
-</head>
-<body>
-    <ul>
-        @foreach ($notes as $note)
-        <li>{{ $note->note }}</li>
+@extends('layout')
+
+@section('content')
+    <h1>Notes List</h1>
+
+    <ul class="list-group">
+        @foreach($notes as $note)
+        <li class="list-group-item">{{ $note->note }}</li>
         @endforeach
     </ul>
-</body>
-</html>
+@endsection
