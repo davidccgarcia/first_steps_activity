@@ -19,9 +19,7 @@ Route::get('notes', 'NotesController@index');
 
 Route::get('notes/create', 'NotesController@create');
 
-Route::post('notes', function () {
-    return '[Creating a note]';
-});
+Route::post('notes', 'NotesController@store');
 
 Route::get('notes/{note}', function ($note) {
     dd($note);
